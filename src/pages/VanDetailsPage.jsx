@@ -18,10 +18,15 @@ function VanDetailsPage() {
     }, [])
 
     return (
-        <div>
+        <div className="van-detail-container">
 
 
-            <VanDetails van={van} description={van.description} />
+            {van ?
+                (<>
+                    <button className="link-button"> Rent this van </button>
+                    <VanDetails van={van} description={van.description} className="van-detail" />
+
+                </>) : <h2>loading...</h2>}
         </div>
     )
 }
