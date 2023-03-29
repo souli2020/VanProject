@@ -25,7 +25,7 @@ function Van() {
         <div className="van-list-container">
             <h1>Explore our van options</h1>
             <div className="van-list">
-                {vans.map(van => <VanDetails van={van} key={van.id} />)}
+                {vans.length ? (vans.map(van => <VanDetails van={van} key={van.id} />)) : <h2>Loading...</h2>}
             </div>
         </div>
     )
