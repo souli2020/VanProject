@@ -21,12 +21,12 @@ function VanDetailsPage() {
         <div className="van-detail-container">
 
 
-            {van ?
+            {Object.keys(van).length ?
                 (<>
                     <button className="link-button"> Rent this van </button>
                     <VanDetails van={van} description={van.description} className="van-detail" />
 
-                </>) : <h2>loading...</h2>}
+                </>) : <h2>Bear with us...</h2>}
         </div>
     )
 }
