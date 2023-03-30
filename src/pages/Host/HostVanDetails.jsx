@@ -23,7 +23,7 @@ function HostVanDetails() {
                 Object.keys(van).length ?
                     (<>
                         <Link to="/host/vans">Go back to all vans</Link>
-                        <VanDetails van={van} description={van.description} id={van.id} />
+                        <VanDetails van={van} id={van.id} />
                     </>
                     ) : <h2>Loading...</h2>
             }
