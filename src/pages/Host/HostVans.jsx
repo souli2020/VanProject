@@ -1,5 +1,5 @@
 import { useEffect, useState, React } from 'react'
-import VanDetails from '../../components/VanDetails'
+import { Link } from 'react-router-dom'
 import server from '../../../server'
 
 function HostVans() {
@@ -20,7 +20,21 @@ function HostVans() {
             {
                 vans.length ?
                     (<div>
-                        {vans.map(van => <VanDetails van={van} id={van.id} key={van.id} link={`${van.id}`} />)}
+                        <h2>Your listed vans:</h2>
+                        {vans.map(van =>
+                            <Link
+                                to={`/host/vans/${van.id}`}
+                                key={van.id}
+                                className="host-van-link-wrapper"
+                            >
+                                <div className="host-van-single" key={van.id}>
+                                    <img src={van.imageUrl} alt={`Photo of ${van.name}`} />
+                                    <div className="host-van-info">
+                                        <h3>{van.name}</h3>
+                                        <p>${van.price}/day</p>
+                                    </div>
+                                </div>
+                            </Link>)}
                     </div>) : <h2>Loading ... </h2>
             }
 
