@@ -5,7 +5,7 @@ function VanDetails({ ...props }) {
     return (
         <>
             <div id={van.id} key={van.id} className="van-tile"  >
-                <Link to={!link ? `/vans/${van.id}` : link} >
+                <Link to={!link ? `/vans/${van.id}` : link} className={link ? "host-van-link-wrapper" : ''} >
                     <img src={van.imageUrl} />
                     <div className="van-info">
                         <h3>{van.name}</h3>
