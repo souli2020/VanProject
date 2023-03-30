@@ -15,7 +15,7 @@ To run this project locally, you need to have the following installed on your ma
 2. Navigate to the project directory
 3. Install the project dependencies: `npm install`
 4. Start the development server: `npm run dev`
-This will start the server at `http://localhost:3000/`.
+This will start the server at `http://localhost:5173/`.
 5. Open your web browser and navigate to `http://localhost:5173/` to view the project.
 ## Building for Production
 To build the project for production, run: `npm run build`
