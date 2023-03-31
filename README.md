@@ -1,4 +1,5 @@
 # VanProject
+ [Live preview](https://van-rent.netlify.app)
 
 
 This is a sample project built with Vite. 
