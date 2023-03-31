@@ -1,6 +1,7 @@
 import { useEffect, useState, React } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import VanDetails from '../../components/VanDetails'
+import { useParams, Outlet, NavLink } from 'react-router-dom'
+import HostNavbar from '../../components/HostNavbar'
+
 function HostVanDetails() {
     const { id } = useParams()
     const [van, setVan] = useState({})
@@ -17,17 +18,33 @@ function HostVanDetails() {
 
     }, [])
 
+
     return (
-        <div className="van-detail-container">
-            {
-                Object.keys(van).length ?
-                    (<>
-                        <Link to="/host/vans">Go back to all vans</Link>
-                        <VanDetails van={van} id={van.id} />
-                    </>
-                    ) : <h2>Loading...</h2>
-            }
-        </div>
+        <section>
+            <NavLink
+                to=".."
+                relative='path'
+                className="back-button"
+            >&larr; <span>Back to all vans</span></NavLink>
+            <div className="host-van-detail-layout-container">
+                <div className="host-van-detail">
+                    <img src={van.imageUrl} />
+                    <div className="host-van-detail-info-text">
+                        <i
+                            className={`van-type van-type-${van.type}`}
+                        >
+                            {van.type}
+                        </i>
+                        <h3>{van.name}</h3>
+                        <h4>${van.price}/day</h4>
+                    </div>
+                </div>
+                <HostNavbar />
+                <Outlet context={van} />
+            </div>
+
+        </section>
+
     )
 }
 
