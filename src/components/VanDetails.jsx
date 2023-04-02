@@ -1,11 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 function VanDetails({ ...props }) {
-    const { van, description, link } = props
+    const location = useLocation()
+
+    const { van, description, link, state } = props
+
+
     return (
         <>
             <div id={van.id} key={van.id} className="van-tile"  >
-                <Link to={!link ? `/vans/${van.id}` : link} className={link ? "host-van-link-wrapper" : ''} >
+                <Link to={!link ? `${van.id}` : `${link + "?" + location.state.filters}`} className={link ? "host-van-link-wrapper" : ''} relative="path" state={state} >
                     <img src={van.imageUrl} />
                     <div className="van-info">
                         <h3>{van.name}</h3>
