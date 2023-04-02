@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Van from './pages/Van';
 import Layout from './components/Layout';
-import NotFound from './components/NotFound';
+import NotFound from './pages/NotFound';
 import VanDetailsPage from './pages/VanDetailsPage';
 import Income from './pages/Host/Income';
 import Dashboard from './pages/Host/Dashboard';
@@ -26,8 +26,8 @@ function App() {
 
                     <Route index element={<Home />} />
                     <Route path='/about' element={<About />} />
-                    <Route path="/vans" element={<Van />} />
-                    <Route path="/vans/:id" element={<VanDetailsPage />} />
+                    <Route path="vans" element={<Van />} />
+                    <Route path="vans/:id" element={<VanDetailsPage />} />
                     <Route path="host" element={<HostLayout />}>
                         <Route index element={<Dashboard />} />
                         <Route path="income" element={<Income />} />
